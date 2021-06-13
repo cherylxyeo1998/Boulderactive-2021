@@ -59,7 +59,7 @@ a.link:active {
 
 .pimg1 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("../img/image1.jpg");
+        url("../img/image1.JPG");
     height: 100%;
 }
 
@@ -77,7 +77,7 @@ a.link:active {
 
 .pimg4 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url("../img/image4.jpg");
+        url("../img/image4.JPG");
     min-height: 400px;
 }
 
@@ -260,11 +260,9 @@ div.desc {
     text-transform: uppercase;
 }
 
-.mySlides {
-    display: none;
-}
-
-.scheduleSlides {
+.mySlides,
+.scheduleSlides,
+.pricingSlides {
     display: none;
 }
 

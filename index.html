@@ -227,7 +227,25 @@
   <div id="reg">
     <section class="section section-light">
       <h2 class="section-heading">REGISTRATION AND PAYMENT</h2>
-      <img src="../img/registration_pricing.png" alt="Pricing" class="responsive-img-480"><br><br>
+
+
+      <div style="display: inline-block;">
+        <img src="../img/registration_pricing.png" alt="Pricing" class="pricingSlides responsive-img-480">
+        <img src="../img/nus_registration_price.png" alt="Pricing_NUS" class="pricingSlides responsive-img-480">
+      </div>
+
+      <div class="w3-center">
+        <div class="w3-section">
+          <button class="w3-button w3-light-grey" onclick="pricingPlusDivs(-1)">❮ Prev</button>
+          <button class="w3-button w3-light-grey" onclick="pricingPlusDivs(1)">Next ❯</button>
+        </div>
+        <button class="w3-button demo2" onclick="pricingCurrentDiv(1)">1</button>
+        <button class="w3-button demo2" onclick="pricingCurrentDiv(2)">2</button>
+      </div>
+
+      
+
+
       <div class="responsive-container centered-content">
         <h4 style="margin: 32px 0 16px 0;">Registration</h4>
         <p>
@@ -314,6 +332,35 @@
             download class="link">click here.</a>
         </div>
       </div>
+
+      <script>
+        var pricingIndex = 1;
+        pricingShowDivs(pricingIndex);
+
+        function pricingPlusDivs(n) {
+          pricingShowDivs(pricingIndex += n);
+        }
+
+        function pricingCurrentDiv(n) {
+          pricingShowDivs(pricingIndex = n);
+        }
+
+        function pricingShowDivs(n) {
+          var i;
+          var x = document.getElementsByClassName('pricingSlides');
+          var dots = document.getElementsByClassName('demo2');
+          if (n > x.length) { pricingIndex = 1; }
+          if (n < 1) { pricingIndex = x.length; }
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = 'none';
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(' ba-red', '');
+          }
+          x[pricingIndex - 1].style.display = 'block';
+          dots[pricingIndex - 1].className += ' ba-red';
+        }
+      </script>
 
     </section>
   </div>
